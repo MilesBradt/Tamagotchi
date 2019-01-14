@@ -8,7 +8,7 @@ describe('Tamagotchi', function() {
     roundBoi.gettingColder();
     roundBoi.readyToHatch();
     roundBoi.setBoredom();
-    // roundBoi.setHunger();
+    roundBoi.setHunger();
     roundBoi.setEnergyLevel();
     roundBoi.setCleanliness();
   });
@@ -19,9 +19,6 @@ describe('Tamagotchi', function() {
   });
 
   it('should count down hunger', function() {
-    setInterval(() => {
-      roundBoi.setHunger();
-    }, 1000);
     jasmine.clock().tick(1001);
     expect(roundBoi.hunger).toEqual(9)
   });

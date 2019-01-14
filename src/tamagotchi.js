@@ -47,8 +47,10 @@ readyToHatch() {
 
 ////------AFTER HATCH --------/////
   setHunger() {
-      this.hunger--;
-  }
+    setInterval(() => {
+    this.hunger--;
+  }, 1000);
+}
 
   isItHungry() {
     if (this.hunger > 0) {
@@ -58,15 +60,17 @@ readyToHatch() {
     }
   }
 
+  setBoredom() {
+    setInterval(() => {
+      this.boredom ++;
+    }, 5000)
+  }
+
+
   feed() {
     this.hunger = 10;
   }
 
-setBoredom() {
-  setInterval(() => {
-    this.boredom ++;
-  }, 5000)
-}
 
 isItBored() {
   if(this.boredom > 6) {
