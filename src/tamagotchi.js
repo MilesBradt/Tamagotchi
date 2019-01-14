@@ -12,45 +12,49 @@ export class Tamagotchi {
     this.boredom = 0;
   }
 
-gettingColder() {
-  setInterval(() => {
-    this.warmthLevel -= 2;
-  }, 10000);
-}
-
-isItCold() {
-  if(this.warmthLevel > 0) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-warmUp() {
-  this.warmthLevel += 2
-}
-
-death() {
-  if(this.warmthLevel <= -8) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-readyToHatch() {
-  setInterval(() => {
-    this.hatch = true;
-  }, 300000)
-}
-
-
-////------AFTER HATCH --------/////
-  setHunger() {
+  gettingColder() {
     setInterval(() => {
-    this.hunger--;
-  }, 1000);
-}
+      this.warmthLevel -= 2;
+    }, 10000);
+  }
+
+  isItCold() {
+    if(this.warmthLevel > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  warmUp() {
+    this.warmthLevel += 2
+  }
+
+  death() {
+    if(this.warmthLevel <= -8) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  readyToHatch() {
+    setInterval(() => {
+      this.hatch = true;
+    }, 300000)
+  }
+
+
+  ////------AFTER HATCH --------/////
+  setHunger() {
+  let stopTest = setInterval(() => {
+      if (this.hunger == 0) {
+        clearInterval(stopTest);
+      } else {
+        this.hunger--;
+      }
+    }, 1000);
+  }
 
   isItHungry() {
     if (this.hunger > 0) {
@@ -72,40 +76,40 @@ readyToHatch() {
   }
 
 
-isItBored() {
-  if(this.boredom > 6) {
-    return false;
-  } else {
-    return true;
+  isItBored() {
+    if(this.boredom > 6) {
+      return false;
+    } else {
+      return true;
+    }
   }
-}
 
-play() {
-  this.boredom -= 0.5
-}
-
-setEnergyLevel() {
-  setInterval(() => {
-    this.energyLevel --;
-  }, 10000)
-}
-
-isItTired() {
-  if(this.energyLevel >2) {
-    return false;
-  } else {
-    return true
+  play() {
+    this.boredom -= 0.5
   }
-}
 
-setCleanliness() {
-  setInterval(() => {
-    this.cleanliness --;
-  }, 7000)
-}
+  setEnergyLevel() {
+    setInterval(() => {
+      this.energyLevel --;
+    }, 10000)
+  }
 
-clean() {
-  this.cleanliness += 0.5
-}
+  isItTired() {
+    if(this.energyLevel >2) {
+      return false;
+    } else {
+      return true
+    }
+  }
+
+  setCleanliness() {
+    setInterval(() => {
+      this.cleanliness --;
+    }, 7000)
+  }
+
+  clean() {
+    this.cleanliness += 0.5
+  }
 
 }
