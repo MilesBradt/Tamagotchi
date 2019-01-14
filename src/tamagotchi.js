@@ -47,9 +47,7 @@ readyToHatch() {
 
 ////------AFTER HATCH --------/////
   setHunger() {
-    setInterval(() => {
       this.hunger--;
-    }, 1000);
   }
 
   isItHungry() {
@@ -59,6 +57,7 @@ readyToHatch() {
       return true;
     }
   }
+
   feed() {
     this.hunger = 10;
   }
