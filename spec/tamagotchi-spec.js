@@ -27,7 +27,7 @@ describe('Tamagotchi', function() {
 
   it('should count down hunger', function() {
     jasmine.clock().tick(1001);
-    expect(roundBoi.hunger).toEqual(9)
+    expect(roundBoi.hunger).toEqual(9);
   });
 
   it('should die after 900001 milliseconds pass', function() {
@@ -52,7 +52,7 @@ describe('Tamagotchi', function() {
 
 
   it('should get very hungry if the hunger level drops below zero', function() {
-    roundBoi.hunger = -1
+    roundBoi.hunger = -1;
     expect(roundBoi.isItHungry()).toEqual(true);
   });
 

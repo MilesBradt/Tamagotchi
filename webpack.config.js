@@ -24,20 +24,33 @@ module.exports = {
     })
   ],
   module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: [
-            'style-loader',
-            'css-loader'
-          ]
-        },
-        {
-          test: /\.js$/,
-          exclude: [ /node_modules/,
-          /spec/ ],
-          loader: "eslint-loader"
-        }
-      ]
-    }
-  };
+    rules: [
+      // CSS loader
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      // eslint loader
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      //babel
+      // {
+      //   test: /\.js$/,
+      //   exclude: [
+      //     /node_modules/,
+      //     /spec/
+      //   ],
+      //   loader: "babel-loader",
+      //   options: {
+      //     presets: ['es2015']
+      //   }
+      // },
+    ]
+  }
+};

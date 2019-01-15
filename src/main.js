@@ -11,15 +11,15 @@
 // tamagotchi.healthOfTamagotchi();
 //
 // $(document).ready(function() {
-//   $("#feeding").click(function(event) {
+//   $("#feeding").click(function() {
 //     tamagotchi.feed();
 //   });
 //
-//   $("#playing").click(function(event) {
+//   $("#playing").click(function() {
 //     tamagotchi.play();
 //   });
 //
-//   $("#cleaning").click(function(event) {
+//   $("#cleaning").click(function() {
 //     tamagotchi.clean();
 //   });
 //
