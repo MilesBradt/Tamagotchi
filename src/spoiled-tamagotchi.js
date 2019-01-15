@@ -67,7 +67,7 @@ export class spoiledTamagotchi {
   }
 
   isItTired() {
-    if(this.energyLevel >2) {
+    if(this.energyLevel > 2) {
       return false;
     } else {
       return true;

@@ -57,5 +57,17 @@ it('should become very bored if the boredom level reaches 8', function() {
   expect(spoiledRoundBoi.isItBored()).toEqual(true);
 })
 
+it('should have a boredome level of 7.5 after being played with', function() {
+  jasmine.clock().tick(1440000);
+  spoiledRoundBoi.play();
+  expect(spoiledRoundBoi.boredom).toEqual(7.5);
+});
+
+it('should get tired if the energyLevel drops below 2', function() {
+  spoiledRoundBoi.energyLevel = 1;
+  expect(spoiledRoundBoi.isItTired()).toEqual(true);
+});
+
+
 
 });
