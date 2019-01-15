@@ -66,7 +66,7 @@ export class Tamagotchi {
   }
 
   feed() {
-    this.hunger = 10;
+    this.hunger += 5;
   }
 
   setBoredom() {
