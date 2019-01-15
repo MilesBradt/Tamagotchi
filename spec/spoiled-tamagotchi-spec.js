@@ -79,5 +79,10 @@ it('should become dirtier every seven seconds', function(){
   expect(spoiledRoundBoi.cleanliness).toEqual(3);
 });
 
+it('should become cleaner after it is cleaned', function() {
+  spoiledRoundBoi.cleanliness = 3;
+  spoiledRoundBoi.clean();
+  expect(spoiledRoundBoi.cleanliness).toEqual(3.5);
+})
 
 });
