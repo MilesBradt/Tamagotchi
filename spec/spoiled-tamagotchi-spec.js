@@ -11,6 +11,7 @@ describe('Spoiled Tamagotchi', function() {
     spoiledRoundBoi.setCleanliness();
     spoiledRoundBoi.conditonOfTamagotchi();
     spoiledRoundBoi.healthOfTamagotchi();
+    spoiledRoundBoi.affectionMeter();
   });
 
   afterEach(function() {
@@ -144,7 +145,7 @@ it('should become less health if cleanliness leve lis between -10 and 0', functi
 it('should like you less if the happiness is less than 5', function(){
   spoiledRoundBoi.happiness = 3;
   jasmine.clock().tick(10001);
-  expect(spoiledRoundBoi.likesYou).toEqual(4.5);
+  expect(spoiledRoundBoi.likesYou).toEqual(9.5);
 })
 
 });
