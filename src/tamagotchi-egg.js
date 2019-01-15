@@ -20,4 +20,10 @@ export class Egg {
     }
   }
 
+  readyToHatch() {
+    setInterval(() => {
+      this.hatch = true;
+    }, 5000);
+  }
+
 }

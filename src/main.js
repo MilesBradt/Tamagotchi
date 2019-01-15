@@ -6,21 +6,28 @@ import './styles.css';
 import 'bootstrap';
 
 let tamagotchiEgg = new Egg();
+let tamagotchi = new Tamagotchi();
 
 tamagotchiEgg.gettingColder();
+tamagotchiEgg.readyToHatch();
 
-let tamagotchi = new Tamagotchi();
-tamagotchi.gettingColder();
-tamagotchi.setHunger();
-tamagotchi.setBoredom();
-tamagotchi.setEnergyLevel();
-tamagotchi.setCleanliness();
-tamagotchi.conditonOfTamagotchi();
-tamagotchi.healthOfTamagotchi();
+
 
 $(document).ready(function() {
   var eggImg = document.getElementById('eggWork');
   eggImg.src = eggIcon;
+
+
+  setInterval(() => { document.getElementById("egg").innerHTML = "Warmth: " + tamagotchiEgg.warmthLevel;
+  }, 1000);
+
+  $("#warm").click(function() {
+    tamagotchiEgg.warmUp();
+  });
+
+  // $("body").addClass("hatched");
+  // $("body").removeClass("egg");
+
   $("#feeding").click(function() {
     tamagotchi.feed();
   });
@@ -33,9 +40,16 @@ $(document).ready(function() {
     tamagotchi.clean();
   });
 
-  $("#warm").click(function() {
-    tamagotchiEgg.warmUp();
-  });
+  tamagotchi.gettingColder();
+  tamagotchi.setHunger();
+  tamagotchi.setBoredom();
+  tamagotchi.setEnergyLevel();
+  tamagotchi.setCleanliness();
+  tamagotchi.conditonOfTamagotchi();
+  tamagotchi.healthOfTamagotchi();
+  setInterval(() => { document.getElementById("hatched").innerHTML = "Hunger: " + tamagotchi.hunger + "<br>" + "Happiness: " + tamagotchi.happiness + "<br>" + "Boredom: " + tamagotchi.boredom + "<br>" + "Energy Level: " + tamagotchi.energyLevel + "<br>" + "Cleanliness: " + tamagotchi.cleanliness + "<br>" + "Health: " + tamagotchi.health ;
+  }, 1000);
+
 
   const xhr = $.get('http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=AWVfCt9Fhwjxlk59qr9Lua8QLvLdJwm1&limit=1');
   xhr.done(function(data) {
@@ -43,10 +57,5 @@ $(document).ready(function() {
     document.getElementById("giphyoutput").src = data.data[0].images.original.url
   });
 
-  setInterval(() => { document.getElementById("output").innerHTML = "Warmth: " + tamagotchiEgg.warmthLevel;
-  }, 1000);
-
-  // setInterval(() => { document.getElementById("output").innerHTML = "Hunger: " + tamagotchi.hunger + "<br>" + "Happiness: " + tamagotchi.happiness + "<br>" + "Boredom: " + tamagotchi.boredom + "<br>" + "Energy Level: " + tamagotchi.energyLevel + "<br>" + "Cleanliness: " + tamagotchi.cleanliness + "<br>" + "Health: " + tamagotchi.health ;
-  // }, 1000);
 
 });
