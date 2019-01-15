@@ -13,24 +13,6 @@ export class spoiledTamagotchi {
     this.likesYou = 10;
   }
 
-  // gettingColder() {
-  //   setInterval(() => {
-  //     this.warmthLevel -= 2;
-  //   }, 10000);
-  // }
-  //
-  // isItCold() {
-  //   if(this.warmthLevel > 0) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  //
-  // warmUp() {
-  //   this.warmthLevel += 2;
-  // }
-
   death() {
     if(this.warmthLevel <= -8) {
       return true;
@@ -38,13 +20,6 @@ export class spoiledTamagotchi {
       return false;
     }
   }
-  //
-  // readyToHatch() {
-  //   setInterval(() => {
-  //     this.hatch = true;
-  //   }, 300000);
-  // }
-
 
   ////------AFTER HATCH --------/////
   setHunger() {
@@ -54,7 +29,7 @@ export class spoiledTamagotchi {
       } else {
         this.hunger--;
       }
-    }, 1000);
+    }, 60000);
   }
 
   isItHungry() {

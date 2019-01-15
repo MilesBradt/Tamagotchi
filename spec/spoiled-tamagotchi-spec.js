@@ -19,8 +19,9 @@ afterEach(function() {
 
 
 it('should count down hunger', function() {
-  jasmine.clock().tick(1001);
+  jasmine.clock().tick(60001);
   expect(spoiledRoundBoi.hunger).toEqual(9)
+
 
 
 });
