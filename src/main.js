@@ -11,12 +11,9 @@ let tamagotchi = new Tamagotchi();
 tamagotchiEgg.gettingColder();
 tamagotchiEgg.readyToHatch();
 
-
-
 $(document).ready(function() {
   var eggImg = document.getElementById('eggWork');
   eggImg.src = eggIcon;
-
 
   setInterval(() => { document.getElementById("egg").innerHTML = "Warmth: " + tamagotchiEgg.warmthLevel;
   }, 1000);
@@ -54,13 +51,10 @@ $(document).ready(function() {
     tamagotchi.clean();
   });
 
-
-
   const xhr = $.get('http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=AWVfCt9Fhwjxlk59qr9Lua8QLvLdJwm1&limit=1');
   xhr.done(function(data) {
     console.log("success got data", data);
     document.getElementById("giphyoutput").src = data.data[0].images.original.url
   });
-
 
 });
