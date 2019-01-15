@@ -121,7 +121,7 @@ export class grumpTamagotchi {
         this.cleanliness --;
       }
     }, 7000);
-    }
+  }
 
   clean() {
     this.cleanliness += 0.5;
@@ -133,7 +133,7 @@ export class grumpTamagotchi {
       if(this.happiness == 0) {
         clearInterval(happinessCounter);
       }  else  if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
-       {
+      {
         this.happiness--;
       }
     }, 5000);
@@ -154,7 +154,7 @@ export class grumpTamagotchi {
       if (this.likesYou == 0) {
         clearInterval(affectionCounter);
       } else if(this.happiness <= 5) {
-        this.likesYou -- 1;
+        this.likesYou -- ;
       }
     }, 10000);
   }
