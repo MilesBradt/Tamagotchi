@@ -139,6 +139,12 @@ it('should become less health if cleanliness leve lis between -10 and 0', functi
   spoiledRoundBoi.cleanliness = -3;
   jasmine.clock().tick(10001);
   expect(spoiledRoundBoi.health).toEqual(8);
+});
+
+it('should like you less if the happiness is less than 5', function(){
+  spoiledRoundBoi.happiness = 3;
+  jasmine.clock().tick(10001);
+  expect(spoiledRoundBoi.likesYou).toEqual(4.5);
 })
 
 });
