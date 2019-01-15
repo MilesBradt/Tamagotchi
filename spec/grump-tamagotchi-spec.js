@@ -30,7 +30,10 @@ describe('grumpTamagotchi', function() {
     expect(grumpyRoundBoi.hunger).toEqual(4);
   });
 
-
+  it('should get very hungry if the hunger level drops to 2', function() {
+    grumpyRoundBoi.hunger = 1;
+    expect(grumpyRoundBoi.isItHungry()).toEqual(true);
+  });
 
 
 });
