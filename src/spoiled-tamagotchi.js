@@ -116,7 +116,7 @@ export class spoiledTamagotchi {
     let heatlhCounter = setInterval (() => {
       if(this.health == 0) {
         clearInterval(heatlhCounter);
-      } else if ((-5 <= this.hunger && this.hunger <= 0) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0))
+      } else if ((-5 <= this.hunger && this.hunger <= 0) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= -4))
       {
         this.health -= 2;
       }

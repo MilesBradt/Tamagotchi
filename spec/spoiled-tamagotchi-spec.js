@@ -135,4 +135,10 @@ it('should become less healthy if energy level is between -10 and 0', function()
   expect(spoiledRoundBoi.health).toEqual(8);
 });
 
+it('should become less health if cleanliness leve lis between -10 and 0', function(){
+  spoiledRoundBoi.cleanliness = -3;
+  jasmine.clock().tick(10001);
+  expect(spoiledRoundBoi.health).toEqual(8);
+})
+
 });
