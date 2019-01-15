@@ -41,7 +41,7 @@ export class spoiledTamagotchi {
       } else {
         this.boredom ++;
       }
-    }, 5000);
+    }, 180000);
   }
 
   isItBored() {

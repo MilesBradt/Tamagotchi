@@ -47,4 +47,9 @@ it('should have a hunger level of 10 if it is fed', function() {
   expect(spoiledRoundBoi.hunger).toEqual(10);
 });
 
+it('should become more bored every three minutes', function() {
+  jasmine.clock().tick(180001);
+  expect(spoiledRoundBoi.boredom).toEqual(1);
+})
+
 });
