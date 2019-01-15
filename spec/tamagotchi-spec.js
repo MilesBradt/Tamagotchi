@@ -16,6 +16,13 @@ describe('Tamagotchi', function() {
   afterEach(function() {
     jasmine.clock().uninstall();
     roundBoi.warmthLevel = 10;
+    roundBoi.health = 10;
+    roundBoi.hunger = 10;
+    roundBoi.happiness = 10;
+    roundBoi.energyLevel = 10;
+    roundBoi.cleanliness = 10;
+    roundBoi.boredom = 0;
+    roundBoi.likesYou = 10;
   });
 
   it('should count down hunger', function() {
@@ -44,8 +51,8 @@ describe('Tamagotchi', function() {
   });
 
 
-  it('should get very hungry if the food level drops below zero', function() {
-    roundBoi.foodLevel = 0;
+  it('should get very hungry if the hunger level drops below zero', function() {
+    roundBoi.hunger = -1
     expect(roundBoi.isItHungry()).toEqual(true);
   });
 
@@ -61,9 +68,9 @@ describe('Tamagotchi', function() {
   });
 
   it('should have a food level of ten if it is fed', function() {
-    jasmine.clock().tick(9001);
+    jasmine.clock().tick(1001);
     roundBoi.feed();
-    expect(roundBoi.foodLevel).toEqual(10);
+    expect(roundBoi.hunger).toEqual(14);
   });
 
   it('should increase bordem after five seconds', function() {

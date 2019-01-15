@@ -26,6 +26,6 @@ export class Egg {
     }, 5000);
   }
 
-  whatKind
+
 
 }

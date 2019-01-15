@@ -2,8 +2,6 @@ export class spoiledTamagotchi {
 
   constructor(name) {
     this.name = name;
-    // this.warmthLevel = 10;
-    // this.hatch = false;
     this.health = 10;
     this.hunger = 10;
     this.happiness = 10;
@@ -13,52 +11,19 @@ export class spoiledTamagotchi {
     this.likesYou = 10;
   }
 
-  // gettingColder() {
-  //   setInterval(() => {
-  //     this.warmthLevel -= 2;
-  //   }, 10000);
-  // }
-  //
-  // isItCold() {
-  //   if(this.warmthLevel > 0) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  //
-  // warmUp() {
-  //   this.warmthLevel += 2;
-  // }
-
-  death() {
-    if(this.warmthLevel <= -8) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  //
-  // readyToHatch() {
-  //   setInterval(() => {
-  //     this.hatch = true;
-  //   }, 300000);
-  // }
-
-
   ////------AFTER HATCH --------/////
   setHunger() {
     let hungerCounter = setInterval(() => {
-      if (this.hunger == -100) {
+      if (this.hunger == -5) {
         clearInterval(hungerCounter);
       } else {
         this.hunger--;
       }
-    }, 1000);
+    }, 60000);
   }
 
   isItHungry() {
-    if (this.hunger > 0) {
+    if (this.hunger > 2) {
       return false;
     } else {
       return true;
@@ -66,7 +31,7 @@ export class spoiledTamagotchi {
   }
 
   feed() {
-    this.hunger += 5;
+    this.hunger += 1;
   }
 
   setBoredom() {
@@ -76,11 +41,11 @@ export class spoiledTamagotchi {
       } else {
         this.boredom ++;
       }
-    }, 5000);
+    }, 180000);
   }
 
   isItBored() {
-    if(this.boredom > 6) {
+    if(this.boredom < 8) {
       return false;
     } else {
       return true;
@@ -102,7 +67,7 @@ export class spoiledTamagotchi {
   }
 
   isItTired() {
-    if(this.energyLevel >2) {
+    if(this.energyLevel > 2) {
       return false;
     } else {
       return true;
@@ -123,6 +88,14 @@ export class spoiledTamagotchi {
     }, 7000);
   }
 
+  isItClean(){
+    if(this.cleanliness > 2) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   clean() {
     this.cleanliness += 0.5;
   }
@@ -132,7 +105,7 @@ export class spoiledTamagotchi {
     let happinessCounter = setInterval(() => {
       if(this.happiness == 0) {
         clearInterval(happinessCounter);
-      }  else  if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
+      }  else  if((-5 <= this.hunger && this.hunger <= 0) || (5 <= this.boredom && this.boredom <= 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
       {
         this.happiness--;
       }
@@ -143,7 +116,8 @@ export class spoiledTamagotchi {
     let heatlhCounter = setInterval (() => {
       if(this.health == 0) {
         clearInterval(heatlhCounter);
-      } else if ((-50 <= this.hunger && this.hunger <= -10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0)) {
+      } else if ((-5 <= this.hunger && this.hunger <= 0) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0))
+      {
         this.health -= 2;
       }
     }, 10000);
