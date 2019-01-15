@@ -25,8 +25,22 @@ $(document).ready(function() {
     tamagotchiEgg.warmUp();
   });
 
-  // $("body").addClass("hatched");
-  // $("body").removeClass("egg");
+  setTimeout(function() {
+    $(".giphy").show();
+    $("#hatchedButtons").show();
+    $(".eggUnhatched").hide();
+    tamagotchi.gettingColder();
+    tamagotchi.setHunger();
+    tamagotchi.setBoredom();
+    tamagotchi.setEnergyLevel();
+    tamagotchi.setCleanliness();
+    tamagotchi.conditonOfTamagotchi();
+    tamagotchi.healthOfTamagotchi();
+    setInterval(() => {
+      document.getElementById("hatched").innerHTML = "Hunger: " + tamagotchi.hunger + "<br>" + "Happiness: " + tamagotchi.happiness + "<br>" + "Boredom: " + tamagotchi.boredom + "<br>" + "Energy Level: " + tamagotchi.energyLevel + "<br>" + "Cleanliness: " + tamagotchi.cleanliness + "<br>" + "Health: " + tamagotchi.health ;
+    }, 1000);
+  }, 5000);
+
 
   $("#feeding").click(function() {
     tamagotchi.feed();
@@ -40,15 +54,6 @@ $(document).ready(function() {
     tamagotchi.clean();
   });
 
-  tamagotchi.gettingColder();
-  tamagotchi.setHunger();
-  tamagotchi.setBoredom();
-  tamagotchi.setEnergyLevel();
-  tamagotchi.setCleanliness();
-  tamagotchi.conditonOfTamagotchi();
-  tamagotchi.healthOfTamagotchi();
-  setInterval(() => { document.getElementById("hatched").innerHTML = "Hunger: " + tamagotchi.hunger + "<br>" + "Happiness: " + tamagotchi.happiness + "<br>" + "Boredom: " + tamagotchi.boredom + "<br>" + "Energy Level: " + tamagotchi.energyLevel + "<br>" + "Cleanliness: " + tamagotchi.cleanliness + "<br>" + "Health: " + tamagotchi.health ;
-  }, 1000);
 
 
   const xhr = $.get('http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=AWVfCt9Fhwjxlk59qr9Lua8QLvLdJwm1&limit=1');
