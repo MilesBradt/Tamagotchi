@@ -75,7 +75,8 @@ export class Tamagotchi {
         clearInterval(boredomCounter);
       } else {
         this.boredom ++;
-      }, 5000);
+      }
+    }, 5000);
   }
 
   isItBored() {
@@ -95,7 +96,7 @@ export class Tamagotchi {
       if(this.energyLevel == -10) {
         clearInterval(energyLevelCounter);
       } else {
-        this.energyLevel = --;
+        this.energyLevel --;
       }
     }, 10000);
   }
@@ -118,7 +119,8 @@ export class Tamagotchi {
         clearInterval(cleanlinessCounter);
       } else {
         this.cleanliness --;
-      }, 7000);
+      }
+    }, 7000);
     }
 
   clean() {
@@ -128,7 +130,7 @@ export class Tamagotchi {
   // Happiness
   conditonOfTamagotchi() {
     let happinessCounter = setInterval(() => {
-      if(this.happiness == 0 {
+      if(this.happiness == 0) {
         clearInterval(happinessCounter);
       }  else  if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
        {
@@ -140,7 +142,7 @@ export class Tamagotchi {
   healthOfTamagotchi() {
     let heatlhCounter = setInterval (() => {
       if(this.health == 0) {
-        clearInterval(healthCounter);
+        clearInterval(heatlhCounter);
       } else if ((-50 <= this.hunger && this.hunger <= -10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0)) {
         this.health -= 2;
       }
