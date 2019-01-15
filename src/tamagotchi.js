@@ -70,9 +70,12 @@ export class Tamagotchi {
   }
 
   setBoredom() {
-    setInterval(() => {
-      this.boredom ++;
-    }, 5000);
+    let boredomCounter = setInterval(() => {
+      if(this.boredom == 10) {
+        clearInterval(boredomCounter);
+      } else {
+        this.boredom ++;
+      }, 5000);
   }
 
   isItBored() {
@@ -88,8 +91,12 @@ export class Tamagotchi {
   }
 
   setEnergyLevel() {
-    setInterval(() => {
-      this.energyLevel --;
+    let energyLevelCounter = setInterval(() => {
+      if(this.energyLevel == -10) {
+        clearInterval(energyLevelCounter);
+      } else {
+        this.energyLevel = --;
+      }
     }, 10000);
   }
 
@@ -101,38 +108,53 @@ export class Tamagotchi {
     }
   }
 
-  setCleanliness() {
-    setInterval(() => {
-      this.cleanliness --;
-    }, 7000);
+  rest() {
+    this.energyLevel = 10;
   }
+
+  setCleanliness() {
+    let cleanlinessCounter = setInterval(() => {
+      if (this.cleanlinessCounter == -10) {
+        clearInterval(cleanlinessCounter);
+      } else {
+        this.cleanliness --;
+      }, 7000);
+    }
 
   clean() {
     this.cleanliness += 0.5;
   }
 
+  // Happiness
   conditonOfTamagotchi() {
-    setInterval(() => {
-      if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0)) {
+    let happinessCounter = setInterval(() => {
+      if(this.happiness == 0 {
+        clearInterval(happinessCounter);
+      }  else  if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
+       {
         this.happiness--;
       }
     }, 5000);
   }
 
   healthOfTamagotchi() {
-    setInterval(() => {
-      if((-50 <= this.hunger && this.hunger <= -10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0)) {
+    let heatlhCounter = setInterval (() => {
+      if(this.health == 0) {
+        clearInterval(healthCounter);
+      } else if ((-50 <= this.hunger && this.hunger <= -10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0)) {
         this.health -= 2;
       }
     }, 10000);
   }
 
   affectionMeter() {
-    setInterval(() => {
-      if(this.happiness <= 5) {
+    let affectionCounter = setInterval (() => {
+      if (this.likesYou == 0) {
+        clearInterval(affectionCounter);
+      } else if(this.happiness <= 5) {
         this.likesYou -= - 1;
       }
-    });
+    }, 10000);
   }
 
 }
