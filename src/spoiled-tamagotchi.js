@@ -88,6 +88,14 @@ export class spoiledTamagotchi {
     }, 7000);
   }
 
+  isItClean(){
+    if(this.cleanliness > 2) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   clean() {
     this.cleanliness += 0.5;
   }
