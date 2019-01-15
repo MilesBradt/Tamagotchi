@@ -68,6 +68,11 @@ it('should get tired if the energyLevel drops below 2', function() {
   expect(spoiledRoundBoi.isItTired()).toEqual(true);
 });
 
+it('should regain full energy levels after resting', function(){
+  spoiledRoundBoi.energyLevel = 1;
+  spoiledRoundBoi.rest();
+  expect(spoiledRoundBoi.energyLevel).toEqual(10);
+})
 
 
 });
