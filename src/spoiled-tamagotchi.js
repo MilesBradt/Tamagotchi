@@ -105,7 +105,7 @@ export class spoiledTamagotchi {
     let happinessCounter = setInterval(() => {
       if(this.happiness == 0) {
         clearInterval(happinessCounter);
-      }  else  if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
+      }  else  if((-5 <= this.hunger && this.hunger <= 0) || (5 <= this.boredom && this.boredom <= 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
       {
         this.happiness--;
       }
