@@ -72,7 +72,12 @@ it('should regain full energy levels after resting', function(){
   spoiledRoundBoi.energyLevel = 1;
   spoiledRoundBoi.rest();
   expect(spoiledRoundBoi.energyLevel).toEqual(10);
-})
+});
+
+it('should become dirtier every seven seconds', function(){
+  jasmine.clock().tick(7001);
+  expect(spoiledRoundBoi.cleanliness).toEqual(3);
+});
 
 
 });
