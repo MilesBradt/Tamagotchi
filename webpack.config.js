@@ -24,19 +24,28 @@ module.exports = {
     })
   ],
   module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: [
-            'style-loader',
-            'css-loader'
-          ]
-        },
-        {
-          test: /\.js$/,
-          exclude: [ /node_modules/,
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.js$/,
+        exclude: [ /node_modules/,
           /spec/ ],
           loader: "eslint-loader"
+        }, {
+          test: /\.(gif|png|jp(e*)g|svg)$/,
+          use: [{
+            loader: 'url-loader',
+            options: {
+              limit: 8000, // Convert images < 8kb to base64 strings
+              name: 'images/[hash]-[name].[ext]'
+            }
+          }]
         }
       ]
     }
