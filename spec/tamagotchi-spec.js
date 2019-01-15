@@ -68,9 +68,9 @@ describe('Tamagotchi', function() {
   });
 
   it('should have a food level of ten if it is fed', function() {
-    jasmine.clock().tick(9001);
+    jasmine.clock().tick(1001);
     roundBoi.feed();
-    expect(roundBoi.hunger).toEqual(10);
+    expect(roundBoi.hunger).toEqual(14);
   });
 
   it('should increase bordem after five seconds', function() {

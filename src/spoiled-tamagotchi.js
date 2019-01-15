@@ -45,7 +45,7 @@ export class spoiledTamagotchi {
   }
 
   isItBored() {
-    if(this.boredom > 6) {
+    if(this.boredom < 8) {
       return false;
     } else {
       return true;

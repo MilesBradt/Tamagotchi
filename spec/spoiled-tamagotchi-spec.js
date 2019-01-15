@@ -36,7 +36,7 @@ it('should get very hungry if the hunger level drops to 2', function() {
   expect(spoiledRoundBoi.isItHungry()).toEqual(true);
 });
 
-it('shold get very hungry if 8 minutes pass without feeding', function() {
+it('should get very hungry if 8 minutes pass without feeding', function() {
   jasmine.clock().tick(480001);
   expect(spoiledRoundBoi.isItHungry()).toEqual(true);
 })
@@ -50,6 +50,12 @@ it('should have a hunger level of 10 if it is fed', function() {
 it('should become more bored every three minutes', function() {
   jasmine.clock().tick(180001);
   expect(spoiledRoundBoi.boredom).toEqual(1);
+});
+
+it('should become very bored if the boredom level reaches 8', function() {
+  jasmine.clock().tick(1440001);
+  expect(spoiledRoundBoi.isItBored()).toEqual(true);
 })
+
 
 });
