@@ -2,8 +2,6 @@ export class spoiledTamagotchi {
 
   constructor(name) {
     this.name = name;
-    // this.warmthLevel = 10;
-    // this.hatch = false;
     this.health = 10;
     this.hunger = 10;
     this.happiness = 10;
@@ -13,18 +11,10 @@ export class spoiledTamagotchi {
     this.likesYou = 10;
   }
 
-  death() {
-    if(this.warmthLevel <= -8) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   ////------AFTER HATCH --------/////
   setHunger() {
     let hungerCounter = setInterval(() => {
-      if (this.hunger == -100) {
+      if (this.hunger == -5) {
         clearInterval(hungerCounter);
       } else {
         this.hunger--;
@@ -33,7 +23,7 @@ export class spoiledTamagotchi {
   }
 
   isItHungry() {
-    if (this.hunger > 0) {
+    if (this.hunger > 2) {
       return false;
     } else {
       return true;
@@ -41,7 +31,7 @@ export class spoiledTamagotchi {
   }
 
   feed() {
-    this.hunger += 5;
+    this.hunger += 1;
   }
 
   setBoredom() {
