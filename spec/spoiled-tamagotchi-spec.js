@@ -10,10 +10,12 @@ describe('Spoiled Tamagotchi', function() {
     spoiledRoundBoi.setEnergyLevel();
     spoiledRoundBoi.setCleanliness();
     spoiledRoundBoi.conditonOfTamagotchi();
+    spoiledRoundBoi.healthOfTamagotchi();
   });
 
   afterEach(function() {
     jasmine.clock().uninstall();
+    spoiledRoundBoi.health =10;
     spoiledRoundBoi.hunger = 10;
     spoiledRoundBoi.happiness = 10;
     spoiledRoundBoi.energyLevel = 10;
@@ -107,19 +109,30 @@ it('should become less happy if energy level is between -10 and 0', function() {
   spoiledRoundBoi.energyLevel = -1;
   jasmine.clock().tick(5001);
   expect(spoiledRoundBoi.happiness).toEqual(9);
-})
+});
 
 it('should become less happy if cleanliness level is between -10 and 0', function(){
   spoiledRoundBoi.cleanliness = -5;
   jasmine.clock().tick(5001);
   expect(spoiledRoundBoi.happiness).toEqual(9);
-})
+});
 
 it('should become less happy if health levels are between -10 and 0', function(){
   spoiledRoundBoi.health = -4;
   jasmine.clock().tick(5001);
   expect(spoiledRoundBoi.happiness).toEqual(9);
-})
+});
 
+it('should become less healthy if hunger levels are between -5 and 0', function(){
+  spoiledRoundBoi.hunger = -4;
+  jasmine.clock().tick(10001);
+  expect(spoiledRoundBoi.health).toEqual(8);
+});
+
+it('should become less healthy if energy level is between -10 and 0', function() {
+  spoiledRoundBoi.energyLevel = -1;
+  jasmine.clock().tick(10001);
+  expect(spoiledRoundBoi.health).toEqual(8);
+});
 
 });
