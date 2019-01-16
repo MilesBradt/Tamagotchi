@@ -45,7 +45,7 @@ export class grumpTamagotchi {
   }
 
   isItBored() {
-    if(this.boredom < 8) {
+    if(this.boredom =< 9) {
       return false;
     } else {
       return true;
