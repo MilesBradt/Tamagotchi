@@ -53,7 +53,7 @@ export class grumpTamagotchi {
   }
 
   play() {
-    this.boredom -= 0.5;
+    this.boredom -= 0.25;
   }
 
   setEnergyLevel() {

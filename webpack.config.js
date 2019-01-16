@@ -40,17 +40,17 @@ module.exports = {
         loader: "eslint-loader"
       },
       //babel
-      // {
-      //   test: /\.js$/,
-      //   exclude: [
-      //     /node_modules/,
-      //     /spec/
-      //   ],
-      //   loader: "babel-loader",
-      //   options: {
-      //     presets: ['es2015']
-      //   }
-      // },
+      {
+        test: /\.js$/,
+        exclude: [
+          /node_modules/,
+          /spec/
+        ],
+        loader: "babel-loader",
+        options: {
+          presets: ['es2015']
+        }
+      },
     ]
   }
 };

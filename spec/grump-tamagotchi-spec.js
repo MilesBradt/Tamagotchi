@@ -50,4 +50,12 @@ describe('grumpTamagotchi', function() {
     jasmine.clock().tick(150001);
     expect(grumpyRoundBoi.isItBored()).toEqual(true);
   });
+
+  it('should have a boredom level of 6.75 after being played with', function() {
+    jasmine.clock().tick(150001);
+    grumpyRoundBoi.play();
+    expect(grumpyRoundBoi.boredom).toEqual(7.75);
+  });
+
+
 });
