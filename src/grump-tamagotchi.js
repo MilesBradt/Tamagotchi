@@ -23,7 +23,7 @@ export class grumpTamagotchi {
   }
 
   isItHungry() {
-    if (this.hunger < 2) {
+    if (this.hunger > 2) {
       return false;
     } else {
       return true;
