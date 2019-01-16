@@ -25,10 +25,6 @@ module.exports = {
   ],
   module: {
     rules: [
-<<<<<<< HEAD
-=======
-      // CSS loader
->>>>>>> b7ec79078891957bb746c47e525af60d9d32313a
       {
         test: /\.css$/,
         use: [
@@ -36,7 +32,6 @@ module.exports = {
           'css-loader'
         ]
       },
-<<<<<<< HEAD
       {
         test: /\.js$/,
         exclude: [ /node_modules/,
@@ -51,26 +46,7 @@ module.exports = {
               name: 'images/[hash]-[name].[ext]'
             }
           }]
-=======
-      // eslint loader
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
-      //babel
-      {
-        test: /\.js$/,
-        exclude: [
-          /node_modules/,
-          /spec/
-        ],
-        loader: "babel-loader",
-        options: {
-          presets: ['es2015']
->>>>>>> b7ec79078891957bb746c47e525af60d9d32313a
         }
-      },
-    ]
-  }
-};
+      ]
+    }
+  };
