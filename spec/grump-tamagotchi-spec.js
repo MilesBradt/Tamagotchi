@@ -16,13 +16,13 @@ describe('grumpTamagotchi', function() {
 
   afterEach(function() {
     jasmine.clock().uninstall();
-    grumpyRoundBoi.health =10;
-    grumpyRoundBoi.hunger = 10;
-    grumpyRoundBoi.happiness = 10;
-    grumpyRoundBoi.energyLevel = 10;
-    grumpyRoundBoi.cleanliness = 5;
-    grumpyRoundBoi.boredom = 0;
-    grumpyRoundBoi.likesYou = 10;
+    grumpyRoundBoi.health =6;
+    grumpyRoundBoi.hunger = 5;
+    grumpyRoundBoi.happiness = 3;
+    grumpyRoundBoi.energyLevel = 2;
+    grumpyRoundBoi.cleanliness = 3;
+    grumpyRoundBoi.boredom = 7;
+    grumpyRoundBoi.likesYou = 0;
   });
 
   it('should count down hunger', function() {
@@ -33,6 +33,12 @@ describe('grumpTamagotchi', function() {
   it('should get very hungry if the hunger level drops to 2', function() {
     grumpyRoundBoi.hunger = 1;
     expect(grumpyRoundBoi.isItHungry()).toEqual(true);
+  });
+
+  it('should have a hunger level of 10 if it is fed', function() {
+    jasmine.clock().tick(60001);
+    grumpyRoundBoi.feed();
+    expect(grumpyRoundBoi.hunger).toEqual(5);
   });
 
 
