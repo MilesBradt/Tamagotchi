@@ -39,7 +39,7 @@ export class grumpTamagotchi {
       if(this.boredom == 10) {
         clearInterval(boredomCounter);
       } else {
-        this.boredom --;
+        this.boredom ++
       }
     }, 150000);
   }
