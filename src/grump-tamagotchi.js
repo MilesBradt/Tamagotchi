@@ -9,7 +9,7 @@ export class grumpTamagotchi {
     this.happiness = 5;
     this.energyLevel = 10;
     this.cleanliness = 10;
-    this.boredom = 10;
+    this.boredom = 5;
     this.likesYou = 0;
   }
 

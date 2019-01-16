@@ -1,4 +1,4 @@
-import { Tamagotchi } from './tamagotchi.js';
+import { spoiledTamagotchi } from './spoiled-tamagotchi.js';
 import { Egg } from './tamagotchi-egg.js';
 import eggIcon from './images/egg.gif';
 import $ from 'jquery';
@@ -6,7 +6,7 @@ import './styles.css';
 import 'bootstrap';
 
 let tamagotchiEgg = new Egg();
-let tamagotchi = new Tamagotchi();
+let tamagotchi = new spoiledTamagotchi();
 
 tamagotchiEgg.gettingColder();
 tamagotchiEgg.readyToHatch();
@@ -23,10 +23,12 @@ $(document).ready(function() {
   });
 
   setTimeout(function() {
+    console.log("grumpy? " + tamagotchiEgg.grumpy);
+    console.log("spoiled? " + tamagotchiEgg.spoiled);
     $(".giphy").show();
     $("#hatchedButtons").show();
     $(".eggUnhatched").hide();
-    tamagotchi.gettingColder();
+
     tamagotchi.setHunger();
     tamagotchi.setBoredom();
     tamagotchi.setEnergyLevel();
@@ -36,7 +38,12 @@ $(document).ready(function() {
     setInterval(() => {
       document.getElementById("hatched").innerHTML = "Hunger: " + tamagotchi.hunger + "<br>" + "Happiness: " + tamagotchi.happiness + "<br>" + "Boredom: " + tamagotchi.boredom + "<br>" + "Energy Level: " + tamagotchi.energyLevel + "<br>" + "Cleanliness: " + tamagotchi.cleanliness + "<br>" + "Health: " + tamagotchi.health ;
     }, 1000);
-  }, 5000);
+  }, 60000);
+
+
+  $("#resting").click(function() {
+    tamagotchi.rest();
+  });
 
 
   $("#feeding").click(function() {
