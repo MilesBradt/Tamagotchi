@@ -128,7 +128,7 @@ export class grumpTamagotchi {
       if (this.likesYou == 0) {
         clearInterval(affectionCounter);
       } else if(this.happiness <= 5) {
-        this.likesYou -= 0.5;
+        this.likesYou -= 2;
       }
     }, 10000);
   }
