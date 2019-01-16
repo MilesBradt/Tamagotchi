@@ -52,7 +52,7 @@ describe('Spoiled Tamagotchi', function() {
   });
 
   it('should become very bored if the boredom level reaches 8', function() {
-    jasmine.clock().tick(150001);
+    jasmine.clock().tick(1440001);
     expect(spoiledRoundBoi.isItBored()).toEqual(true);
   });
 

@@ -46,8 +46,8 @@ describe('grumpTamagotchi', function() {
     expect(grumpyRoundBoi.boredom).toEqual(8);
   });
 
-  it('should become very bored if the boredom level reaches 8', function() {
-    jasmine.clock().tick(1440001);
+  it('should become very bored if the boredom level reaches 6', function() {
+    jasmine.clock().tick(150001);
     expect(grumpyRoundBoi.isItBored()).toEqual(true);
   });
 });
