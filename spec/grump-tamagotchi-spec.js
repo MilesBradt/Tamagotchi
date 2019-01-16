@@ -41,5 +41,9 @@ describe('grumpTamagotchi', function() {
     expect(grumpyRoundBoi.hunger).toEqual(5);
   });
 
+  it('should become more bored every two and a half minutes', function() {
+    jasmine.clock().tick(180001);
+    expect(grumpyRoundBoi.boredom).toEqual(8);
+  });
 
 });
