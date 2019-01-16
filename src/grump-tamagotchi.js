@@ -2,63 +2,28 @@ export class grumpTamagotchi {
 
   constructor(name) {
     this.name = name;
-    // this.warmthLevel = 10;
-    // this.hatch = false;
-    this.health = 10;
+    this.health = 6;
     this.hunger = 5;
-    this.happiness = 5;
-    this.energyLevel = 10;
-    this.cleanliness = 10;
-    this.boredom = 5;
+    this.happiness = 3;
+    this.energyLevel = 2;
+    this.cleanliness = 3;
+    this.boredom = 7;
     this.likesYou = 0;
   }
-
-  // gettingColder() {
-  //   setInterval(() => {
-  //     this.warmthLevel -= 2;
-  //   }, 10000);
-  // }
-  //
-  // isItCold() {
-  //   if(this.warmthLevel > 0) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  //
-  // warmUp() {
-  //   this.warmthLevel += 2;
-  // }
-
-  death() {
-    if(this.warmthLevel <= -8) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  // readyToHatch() {
-  //   setInterval(() => {
-  //     this.hatch = true;
-  //   }, 300000);
-  // }
-
 
   ////------AFTER HATCH --------/////
   setHunger() {
     let hungerCounter = setInterval(() => {
-      if (this.hunger == -100) {
+      if (this.hunger == -5) {
         clearInterval(hungerCounter);
       } else {
-        this.hunger--;
+        this.hunger --;
       }
-    }, 1000);
+    }, 60000);
   }
 
   isItHungry() {
-    if (this.hunger > 0) {
+    if (this.hunger > 2) {
       return false;
     } else {
       return true;
@@ -66,7 +31,7 @@ export class grumpTamagotchi {
   }
 
   feed() {
-    this.hunger += 5;
+    this.hunger += 1;
   }
 
   setBoredom() {
@@ -74,13 +39,13 @@ export class grumpTamagotchi {
       if(this.boredom == 10) {
         clearInterval(boredomCounter);
       } else {
-        this.boredom ++;
+        this.boredom ++
       }
-    }, 5000);
+    }, 150000);
   }
 
   isItBored() {
-    if(this.boredom > 6) {
+    if(this.boredom < 6) {
       return false;
     } else {
       return true;
@@ -88,7 +53,7 @@ export class grumpTamagotchi {
   }
 
   play() {
-    this.boredom -= 0.5;
+    this.boredom -= 0.25;
   }
 
   setEnergyLevel() {
@@ -102,7 +67,7 @@ export class grumpTamagotchi {
   }
 
   isItTired() {
-    if(this.energyLevel >2) {
+    if(this.energyLevel > 2) {
       return false;
     } else {
       return true;
@@ -118,9 +83,17 @@ export class grumpTamagotchi {
       if (this.cleanlinessCounter == -10) {
         clearInterval(cleanlinessCounter);
       } else {
-        this.cleanliness --;
+        this.cleanliness -= 2;
       }
     }, 7000);
+  }
+
+  isItClean(){
+    if(this.cleanliness > 2) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   clean() {
@@ -132,7 +105,7 @@ export class grumpTamagotchi {
     let happinessCounter = setInterval(() => {
       if(this.happiness == 0) {
         clearInterval(happinessCounter);
-      }  else  if((-30 <= this.hunger && this.hunger <= 0) || (5 < this.boredom && this.boredom > 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
+      }  else  if((-5 <= this.hunger && this.hunger <= 0) || (5 <= this.boredom && this.boredom <= 10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0) || (-10 <= this.health && this.health <= 0))
       {
         this.happiness--;
       }
@@ -143,7 +116,8 @@ export class grumpTamagotchi {
     let heatlhCounter = setInterval (() => {
       if(this.health == 0) {
         clearInterval(heatlhCounter);
-      } else if ((-50 <= this.hunger && this.hunger <= -10) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0)) {
+      } else if ((-5 <= this.hunger && this.hunger <= 0) || (-10 <= this.energyLevel && this.energyLevel <= 0) || (-10 <= this.cleanliness && this.cleanliness <= 0))
+      {
         this.health -= 2;
       }
     }, 10000);
@@ -154,7 +128,7 @@ export class grumpTamagotchi {
       if (this.likesYou == 0) {
         clearInterval(affectionCounter);
       } else if(this.happiness <= 5) {
-        this.likesYou -- ;
+        this.likesYou -= 2;
       }
     }, 10000);
   }
