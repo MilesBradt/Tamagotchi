@@ -1,4 +1,4 @@
-### Tamagotchi
+# Tamagotchi
 
 ## Description
 
